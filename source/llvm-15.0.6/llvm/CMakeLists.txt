@@ -816,8 +816,8 @@ endif()
 
 include(HandleLLVMOptions)
 
-find_package(Python3 ${LLVM_MINIMUM_PYTHON_VERSION} REQUIRED
-    COMPONENTS Interpreter)
+#find_package(Python3 ${LLVM_MINIMUM_PYTHON_VERSION} REQUIRED
+#    COMPONENTS Interpreter)
 
 ######
 

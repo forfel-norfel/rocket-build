@@ -148,7 +148,7 @@ set(LLVM_COMPILER_CHECKED ON)
 include(AddLLVM)
 include(HandleLLVMOptions)
 
-find_package(Python3 REQUIRED COMPONENTS Interpreter)
+#find_package(Python3 REQUIRED COMPONENTS Interpreter)
 
 # Host triple is used by tests to check if they are running natively.
 include(GetHostTriple)
