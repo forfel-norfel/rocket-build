@@ -379,9 +379,9 @@ endif()
 # Warn users that LIBCXX_ENABLE_STATIC_ABI_LIBRARY is an experimental option.
 if (LIBCXX_ENABLE_STATIC_ABI_LIBRARY)
   message(WARNING "LIBCXX_ENABLE_STATIC_ABI_LIBRARY is an experimental option")
-  if (LIBCXX_ENABLE_STATIC AND NOT Python3_EXECUTABLE)
-    message(FATAL_ERROR "LIBCXX_ENABLE_STATIC_ABI_LIBRARY requires python but it was not found.")
-  endif()
+#  if (LIBCXX_ENABLE_STATIC AND NOT Python3_EXECUTABLE)
+#    message(FATAL_ERROR "LIBCXX_ENABLE_STATIC_ABI_LIBRARY requires python but it was not found.")
+#  endif()
 endif()
 
 if (LIBCXX_ENABLE_ABI_LINKER_SCRIPT)
