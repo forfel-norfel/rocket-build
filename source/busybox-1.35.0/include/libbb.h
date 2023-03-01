@@ -2263,7 +2263,7 @@ extern const char bb_busybox_exec_path[] ALIGN1;
 #ifndef BB_ADDITIONAL_PATH
 #define BB_ADDITIONAL_PATH ""
 #endif
-#define BB_PATH_ROOT_PATH "PATH=/sbin:/usr/sbin:/bin:/usr/bin" BB_ADDITIONAL_PATH
+#define BB_PATH_ROOT_PATH "PATH=/rocket/bin:/sbin:/bin" BB_ADDITIONAL_PATH
 extern const char bb_PATH_root_path[] ALIGN1; /* BB_PATH_ROOT_PATH */
 #define bb_default_root_path (bb_PATH_root_path + sizeof("PATH"))
 /* util-linux manpage says /sbin:/bin:/usr/sbin:/usr/bin,
