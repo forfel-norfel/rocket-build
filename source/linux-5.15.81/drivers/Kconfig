@@ -7,7 +7,6 @@ source "drivers/amba/Kconfig"
 source "drivers/eisa/Kconfig"
 source "drivers/pci/Kconfig"
 source "drivers/cxl/Kconfig"
-source "drivers/pcmcia/Kconfig"
 source "drivers/rapidio/Kconfig"
 
 
@@ -24,8 +23,6 @@ source "drivers/gnss/Kconfig"
 source "drivers/mtd/Kconfig"
 
 source "drivers/of/Kconfig"
-
-source "drivers/parport/Kconfig"
 
 source "drivers/pnp/Kconfig"
 
@@ -45,13 +42,7 @@ source "drivers/target/Kconfig"
 
 source "drivers/message/fusion/Kconfig"
 
-source "drivers/firewire/Kconfig"
-
-source "drivers/macintosh/Kconfig"
-
 source "drivers/net/Kconfig"
-
-source "drivers/isdn/Kconfig"
 
 # input before char - char/joystick depends on it. As does USB.
 
@@ -66,8 +57,6 @@ source "drivers/i3c/Kconfig"
 source "drivers/spi/Kconfig"
 
 source "drivers/spmi/Kconfig"
-
-source "drivers/hsi/Kconfig"
 
 source "drivers/pps/Kconfig"
 
@@ -107,8 +96,6 @@ source "drivers/usb/Kconfig"
 
 source "drivers/mmc/Kconfig"
 
-source "drivers/memstick/Kconfig"
-
 source "drivers/leds/Kconfig"
 
 source "drivers/accessibility/Kconfig"
@@ -130,8 +117,6 @@ source "drivers/auxdisplay/Kconfig"
 source "drivers/uio/Kconfig"
 
 source "drivers/vfio/Kconfig"
-
-source "drivers/vlynq/Kconfig"
 
 source "drivers/virt/Kconfig"
 
@@ -216,8 +201,6 @@ source "drivers/nvmem/Kconfig"
 source "drivers/hwtracing/Kconfig"
 
 source "drivers/fpga/Kconfig"
-
-source "drivers/fsi/Kconfig"
 
 source "drivers/tee/Kconfig"
 
