@@ -3,7 +3,7 @@ tty1::respawn:/bin/sh
 ::ctrlaltdel:/bin/busybox reboot
 ::shutdown:/bin/busybox swapoff -a
 ::shutdown:/bin/busybox umount -a -r
-::restart:/etc/init
+::restart:/init
 tty2::askfirst:/bin/sh
 tty3::askfirst:/bin/sh
-
+tty4::askfirst:/bin/sh

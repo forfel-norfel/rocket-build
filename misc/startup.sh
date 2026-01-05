@@ -1,20 +1,31 @@
 #!/bin/sh
 
-set -e
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+busybox --install -s
 
-busybox mkdir -p /tmp
-busybox mkdir -p /proc
-busybox mkdir -p /sys
-busybox mkdir -p /dev
-busybox mkdir -p /etc/ssl
+sysctl -w kernel.printk="3 4 1 3"
+ifconfig lo 127.0.0.1
 
-busybox mount -t proc proc /proc
-busybox mount -t sysfs sysfs /sys
-busybox mount -t tmpfs none /dev
-
-busybox mdev -s
-
-busybox sysctl -w kernel.printk="3 4 1 3"
-
-busybox ifconfig lo 127.0.0.1
+echo Waiting to mount ROCKET
+wait=0
+while [ $wait -lt 15 ]
+do
+    bootpart=$(blkid | sort | grep -m1 'LABEL="ROCKET"' | grep -o ^[^:]*)
+    if [ -n "$bootpart" ]
+    then
+        mkdir -p /disk/boot
+        mount $bootpart /disk/boot -o ro
+        echo "ROCKET ($bootpart) mounted read-only at /disk/boot"
+        break
+    fi
+    wait=$((wait+1))
+    sleep 1
+done
+if [ -f /disk/boot/rocket-startup.sh ]
+then
+    echo Running /disk/boot/rocket-startup.sh
+    /disk/boot/rocket-startup.sh
+fi
 
