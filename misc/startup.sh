@@ -7,6 +7,7 @@ busybox --install -s
 
 sysctl -w kernel.printk="3 4 1 3"
 ifconfig lo 127.0.0.1
+ln -s /proc/self/fd /dev/fd
 
 echo Waiting to mount ROCKET
 wait=0
